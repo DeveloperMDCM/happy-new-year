@@ -3,14 +3,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
 
 body {
+    user-select: none;
     height: 100vh;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-     background: url("bg.png")
+    background: url("./bg.png")
       no-repeat center center;
     background-size: cover;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
   }
 .container{
     /* background-color: #111; */
@@ -52,6 +57,8 @@ footer{
     position: relative;
     bottom: 70px;
     font-family: 'Bungee Spice', cursive;
+    font-size: 20px;
+
 }
 
 .new-year-body {
@@ -142,6 +149,12 @@ footer{
     100% {
       transform: translate(40vw, 150vh);
       background-color: blue;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .new-year,  .year{
+        font-size: 60px;
     }
   }
   
