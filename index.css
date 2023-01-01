@@ -1,0 +1,147 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nabla&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+
+body {
+    height: 100vh;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background: url("https://images2.alphacoders.com/108/1083050.png")
+      no-repeat center center;
+    background-size: cover;
+    overflow: hidden;
+  }
+.container{
+    /* background-color: #111; */
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+   
+}
+
+footer{
+    background-color: white;
+    text-align: center;
+
+}
+
+.hidden{
+    display: none;
+}
+
+.container h1,h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 10px;
+    width: 140px;
+    height: 100px;
+    transition: 3s;
+}
+.container h1
+{
+    font-family: 'Nabla', cursive;
+    /* background-color: #111; */
+    font-size: 60px;
+}
+ h2
+{
+    position: relative;
+    bottom: 70px;
+    font-family: 'Bungee Spice', cursive;
+}
+
+.new-year-body {
+    text-align: center;
+    color: white;
+    
+  }
+  
+  .new-year {
+    transition: 3s;
+    font-size: 5rem;
+    letter-spacing: 5px;
+    margin-bottom: 0;
+    font-family: 'Nabla', cursive;
+  }
+  
+  .year {
+    transition: 3s;
+    margin: 0;
+    font-size: 8rem;
+    letter-spacing: 10px;
+    font-family: 'Nabla', cursive;
+  }
+
+  .btn:hover {
+    outline-offset: 4px;
+  }
+  
+  .snow {
+    position: absolute;
+    top: -10%;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 0 10px #fff, 0 0 50px #fff;
+  }
+  
+  .snowAnimation1 {
+    animation: snowFall1 linear infinite;
+  }
+  .snowAnimation2 {
+    animation: snowFall2 linear infinite;
+  }
+  .snowAnimation3 {
+    animation: snowFall3 linear infinite;
+  }
+  .snowAnimation4 {
+    animation: snowFall4 linear infinite;
+    
+  }
+
+  .fondo {
+    fill: blur(10px);
+  }
+  
+  @keyframes snowFall1 {
+    0% {
+      transform: translate(0vw, 0vh);
+    }
+    100% {
+      transform: translate(50vw, 150vh);
+      background-color: green;
+    }
+  }
+  @keyframes snowFall2 {
+    0%, 100% {
+        transform: translate(0vw, 150vh);
+    }
+    50% {
+        transform: translate(-10vw, -10vh);
+      background-color: red;
+        
+      
+    }
+  }
+  @keyframes snowFall3 {
+    0% {
+      transform: translate(10vw, 0vh);
+    }
+    100% {
+      transform: translate(40vw, 150vh);
+      background-color: white;
+    }
+  }
+  @keyframes snowFall4 {
+    0% {
+      transform: translate(0vw, 0vh);
+    }
+    100% {
+      transform: translate(40vw, 150vh);
+      background-color: blue;
+    }
+  }
+  
