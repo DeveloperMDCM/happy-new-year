@@ -8,9 +8,7 @@ body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background: url("./bg.png")
-      no-repeat center center;
-    background-size: cover;
+    background: #000000;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -152,11 +150,11 @@ footer{
     }
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 600px) {
     .new-year,  .year{
         font-size: 60px;
     }
-       .container h2 {
+   .container h2 {
         font-size: 19px;
     }
   }
