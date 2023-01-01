@@ -4,7 +4,7 @@
     const minutos = document.querySelector(".minutos");
     const segundos = document.querySelector(".segundos");
 
-    let fecha, fechaRestante, currentTime, duracion, intervalo, limpiarTiempo;
+    let fecha, fechaRestante, currentTime, duracion, intervalo;
 
     intervalo = 1000; // 1 segundo
 
@@ -22,7 +22,7 @@
         duracion = moment.duration(duracion - intervalo, "milliseconds");
 
         if (duracion.asSeconds() <= 0) {
-            clearInterval(limpiarTiempo);
+            clearInterval(1000);
 
             fecha.classList.add("hidden");
         } else {
