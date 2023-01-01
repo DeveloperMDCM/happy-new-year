@@ -1,45 +1,41 @@
 (function () {
-    const dias = document.querySelector('.dias');
-    const horas = document.querySelector('.horas');
-    const minutos = document.querySelector('.minutos');
-    const segundos = document.querySelector('.segundos');
+  const dias = document.querySelector(".dias");
+  const horas = document.querySelector(".horas");
+  const minutos = document.querySelector(".minutos");
+  const segundos = document.querySelector(".segundos");
 
-	let fecha, fechaRestante, currentTime, duracion, intervalo, limpiarTiempo;
+  let fecha, fechaRestante, currentTime, duracion, intervalo, limpiarTiempo;
 
-	intervalo = 1000; // 1 segundo
+  intervalo = 1000; // 1 segundo
 
-  // get time element
   fecha = document.querySelector("fecha");
-	fechaRestante = moment.tz(`${moment().format('YYYY')}-12-31T23:59:59`, "America/Bogota");
-    
-	currentTime = moment();
-	// get duracion between two times
-	duracion = moment.duration(fechaRestante.diff(currentTime));
-	// loop  1 second
-	setInterval(function() {
-		// get updated duracion
-		duracion = moment.duration(duracion - intervalo, 'milliseconds');
+  fechaRestante = moment.tz(
+    `${moment().format("YYYY")}-12-31T23:59:59`,
+    "America/Bogota"
+  );
 
-		// if duracion is >= 0
-		if (duracion.asSeconds() <= 0) {
-			clearInterval(limpiarTiempo);
-			// hide the countdown element
-			fecha.classList.add("hidden");
-		} else {
-            dias.innerHTML = `${duracion.days()}`
-            horas.innerHTML = `${duracion.hours()}`
-            minutos.innerHTML = `${duracion.minutes()}`
-            segundos.innerHTML = `${duracion.seconds()}`
-			// otherwise, show the updated countdown
-		}
-	}, intervalo);
+  currentTime = moment();
 
+  duracion = moment.duration(fechaRestante.diff(currentTime));
+  // loop  1 second
+  setInterval(function () {
+    duracion = moment.duration(duracion - intervalo, "milliseconds");
 
-    
+    if (duracion.asSeconds() <= 0) {
+      clearInterval(limpiarTiempo);
 
-const snowFall = () => {
+      fecha.classList.add("hidden");
+    } else {
+      dias.innerHTML = `${duracion.days()}`;
+      horas.innerHTML = `${duracion.hours()}`;
+      minutos.innerHTML = `${duracion.minutes()}`;
+      segundos.innerHTML = `${duracion.seconds()}`;
+    }
+  }, intervalo);
+
+  const snowFall = () => {
     const bg = document.querySelector(".bg");
-    for (let i = 0; i < 300; i++) {
+    for (let i = 0; i < 120; i++) {
       const snow = document.createElement("span");
       snow.classList.add("snow");
       if (i % 4 === 0) {
@@ -65,14 +61,14 @@ const snowFall = () => {
       bg.appendChild(snow);
     }
   };
-  
+
   const randomNumber = (limit) => {
     return Math.floor(Math.random() * limit);
   };
-  
+
   snowFall();
-  
-  const textShadowColor = [  
+
+  const textShadowColor = [
     "#1fd224",
     "#ffaa01",
     "#ff00aa",
@@ -83,10 +79,11 @@ const snowFall = () => {
     "#03e6ff",
     "#ff0000",
     "#ffffff",
-    "#ffea00",];
-  
+    "#ffea00",
+  ];
+
   let count = 1;
-  
+
   const newYear = document.querySelector(".new-year");
   const year = document.querySelector(".year");
   const dias2 = document.querySelector(".dias");
@@ -95,10 +92,9 @@ const snowFall = () => {
   const segundos2 = document.querySelector(".segundos");
   const copos = document.querySelector(".snow");
   setInterval(() => {
-  
-    if (count !==0) {
-      if(count ===textShadowColor.length){
-        count =0;
+    if (count !== 0) {
+      if (count === textShadowColor.length) {
+        count = 0;
       }
       count++;
       newYear.style.textShadow = `0 0 40px ${textShadowColor[count]}, 0 0 50px ${textShadowColor[count]}, 0 0 100px ${textShadowColor[count]}`;
@@ -111,14 +107,8 @@ const snowFall = () => {
       // minutos2.style.backgroundColor = `${textShadowColor[count]} `;
       // segundos2.style.backgroundColor = `${textShadowColor[count]} `;
       // segundos2.style.backgroundColor = `${textShadowColor[count]} `;
-      
-      copos.classList.add('fondo');
-    }}, 1000);
-  
-  
-      
-  
-  
-     
-  
-}());
+
+      copos.classList.add("fondo");
+    }
+  }, 1000);
+})();
