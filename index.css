@@ -156,7 +156,8 @@ footer{
     .new-year,  .year{
         font-size: 60px;
     }
-      h2 {
-          font-size: 30px;
+       .container h2 {
+        font-size: 30px;
+    }
   }
   
